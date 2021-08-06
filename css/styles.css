@@ -1,0 +1,89 @@
+
+/* Selectors (General Rules) */
+:root {
+    /* Color pallete: https://colorhunt.co/palette/fcf8ecd0e8f279a3b1456268 */
+    --main-color: #D0E8F2;
+    --sub-color: #79A3B1;
+    --dark-color: #456268;
+    --light-color: #FCF8EC;
+}
+
+body {
+    font-size: 62.5%; /* 1rem = 10px () */
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Merriweather', serif;
+}
+
+p, a, li {
+    font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+    font-size: 8rem;
+}
+
+h2 {
+    font-size: 6.8rem;
+}
+
+h3 {
+    font-size: 5.6rem;
+}
+
+h4 {
+    font-size: 4.4rem;
+}
+
+h5 {
+    font-size: 3.2rem;
+}
+
+h6 {
+    font-size: 2rem;
+}
+
+p {
+    font-size: 1.6rem;
+}
+
+
+
+/* Class */
+.screen {
+    height: 100vh;
+}
+
+/* RE: Testing */
+.red {
+    background-color: red;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.green {
+    background-color: green;
+}
+/* End RE */
+
+
+/* ID */
+#intro {
+    background-color: var(--main-color);
+    color: var(--dark-color);
+}
