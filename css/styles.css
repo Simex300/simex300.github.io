@@ -344,6 +344,14 @@ p {
     filter: blur(3px);
 }
 
+.icon-container {
+    padding-top: 2rem;
+    font-size: 4rem;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
 /* ID */
 #intro {
     background: linear-gradient(90deg, rgba(208,232,242,1) 0%, rgba(208,232,242,1) 60%, rgba(208,232,242,0) 75%);
@@ -357,4 +365,22 @@ p {
 
 #portfolio {
     color: var(--dark-color);
+}
+
+#contact {
+    color: var(--main-color);
+    background: linear-gradient(rgba(69,98,104,1) 75%, rgba(208,232,242,0.6) 100%);
+}
+
+#contact a{
+    color: var(--main-color);
+}
+
+#contact a:hover{
+    color: var(--light-color);
+}
+
+#contact .box {
+    left: 30%;
+    top: 15%;
 }
