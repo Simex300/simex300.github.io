@@ -363,16 +363,22 @@ p {
         font-size: 62.5%; /* 1rem = 10px () */
     }
 
+    .screen {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
     .box {
         position: absolute;
-        top: 15%;
-        left: 0;
+        top: 0;
+        left: auto;
     
         display: block;
         height: auto;
         
         border: none;
-        padding: 5%;
+        padding: 15% 10%;
     }
 
     .menu {
@@ -541,15 +547,20 @@ p {
     #skills {
         background: linear-gradient(rgba(69,98,104,1) 85%, rgba(208,232,242,0.6) 100%);
         color: var(--main-color);
+
+        align-items: stretch;
+        padding-top: 5%;
+    }
+
+    #portfolio {
+        align-items: stretch;
     }
 
     #contact .box {
-        left: 0;
+        left: auto;
         top: 15%;
-    }
 
-    #contact .box .heading {
-        margin-left: 2.8rem;
+        text-align: center;
     }
 }
 
