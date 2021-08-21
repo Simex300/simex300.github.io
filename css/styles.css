@@ -279,40 +279,6 @@ p {
     padding: 1rem;
 }
 
-/* Hover Flex behavior */
-.flex-item:hover {
-    flex-grow: 10;
-    
-}
-
-.flex-item:hover .flex-content {
-    top: 10%;
-    left: 4%;
-
-    width: 88%;
-    height: 80%;
-
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    
-    padding-left: 4%;
-    padding-top: 2%;
-} 
-
-.flex-item:hover .flex-content .flex-description-box {
-    display: block;
-}
-
-.flex-item:hover .flex-content .flex-title {
-    display: block;
-    line-height: 7rem;
-} 
-
-.flex-item:hover .flex-content .flex-link:hover {
-    color: var(--sub-color);
-}
-
 .blur {
     -webkit-filter: blur(3px);
     -moz-filter: blur(3px);
@@ -525,12 +491,16 @@ p {
     
     .flex-link {
         text-decoration: none;
-        color: var(--dark-color);
-    
-        background-color: var(--light-color);
-        line-height: 7rem;
-        font-size: 1.6rem;
+        
+        display: block;
+        margin: 1.2rem;
         padding: 1rem;
+
+        font-size: 1.6rem;
+        line-height: 4rem;
+
+        color: var(--dark-color);
+        background-color: var(--light-color);
     }
 
     .flex-item.active {
@@ -545,11 +515,11 @@ p {
         display: block;
     }
 
-    .flex-item.active .flex-content .flex-description-box .flex-link {
+    /* .flex-item.active .flex-content .flex-description-box .flex-link {
         line-height: 4rem;
         display: block;
         margin: 1.2rem;
-    }
+    } */
 
     .icon-container {
         padding-top: 4rem;
@@ -606,5 +576,38 @@ p {
 
     .flex-item:not(:hover) .flex-content .flex-title, .flex-description-box{
         display: none;
+    }
+
+    .flex-item:hover {
+        flex-grow: 10;
+        
+    }
+    
+    .flex-item:hover .flex-content {
+        top: 10%;
+        left: 4%;
+    
+        width: 88%;
+        height: 80%;
+    
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        
+        padding-left: 4%;
+        padding-top: 2%;
+    } 
+    
+    .flex-item:hover .flex-content .flex-description-box {
+        display: block;
+    }
+    
+    .flex-item:hover .flex-content .flex-title {
+        display: block;
+        line-height: 7rem;
+    } 
+    
+    .flex-item:hover .flex-content .flex-link:hover {
+        color: var(--sub-color);
     }
 }
