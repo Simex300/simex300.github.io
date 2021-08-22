@@ -9,7 +9,7 @@ document.querySelectorAll(".grid-item").forEach(e => {
 });
 
 document.querySelectorAll(".flex-item").forEach(e => {
-    if (navigator.userAgentData.mobile)
+    // if (navigator.userAgentData.mobile)
         e.onpointerdown = openPortfolio;
 });
 
@@ -49,18 +49,18 @@ function openPortfolio(e) {
 function removeDOMClasses() {
     if(window.innerWidth <= 800) {
         // Tablet and mobile changes
-        document.querySelectorAll(".menu .menu-item .squarebox .alt").forEach(squarebox => {
+        document.querySelectorAll(".grid .menu .menu-item .squarebox .alt").forEach(squarebox => {
             if(squarebox.classList.contains("alt"))
                 squarebox.classList.remove("alt")
         })
     }
     else {
         // Tablet and mobile changes
-        document.querySelectorAll(".menu .menu-item .squarebox").forEach(squarebox => {
-            console.log(squarebox.children);
-            for (const child in squarebox.children) {
-                if(child.classList && !child.classList.contains("alt"))
-                child.classList.add("alt")
+        document.querySelectorAll(".grid .menu .menu-item .squarebox").forEach(squarebox => {
+            const children = squarebox.children
+            for (let i = 0; i < children.length; i++) {
+                if(!children[i].classList.contains("alt"))
+                    children[i].classList.add("alt")
             }
         })
     }
