@@ -10,7 +10,12 @@ document.querySelectorAll(".grid-item").forEach(e => {
 
 document.querySelectorAll(".flex-item").forEach(e => {
     if (navigator.userAgentData.mobile)
-        e.addEventListener("touchend", openPortfolio);
+        e.onpointerdown = openPortfolio;
+});
+
+document.querySelectorAll(".flex-link").forEach(e => {
+    if (navigator.userAgentData.mobile)
+        e.onpointerdown = manageLink;
 });
 
 function openSkills() {
@@ -22,13 +27,23 @@ function openSkills() {
         this.children[1].classList.toggle("active")
 }
 
-function openPortfolio() {
+function openPortfolio(e) {
+    e.stopPropagation();
     const hadActive = this.classList.contains("active")
     document.querySelectorAll(".flex-item").forEach(e => {
         e.classList.remove("active");
     });
-    if(!hadActive)
-        this.classList.toggle("active")
+    document.querySelectorAll(".flex-link").forEach(e => {
+        e.classList.remove("active");
+    });
+    if(!hadActive){
+        this.classList.toggle("active");
+        setTimeout(() => {
+            this.querySelectorAll(".flex-link").forEach(e => {
+                e.classList.add("active");
+            })
+        }, 45);
+    }
 }
 
 function removeDOMClasses() {
@@ -44,9 +59,13 @@ function removeDOMClasses() {
         document.querySelectorAll(".menu .menu-item .squarebox").forEach(squarebox => {
             console.log(squarebox.children);
             for (const child in squarebox.children) {
-                if(!child.classList.contains("alt"))
+                if(child.classList && !child.classList.contains("alt"))
                 child.classList.add("alt")
             }
         })
     }
+}
+
+function manageLink(e) {
+    e.stopPropagation()
 }

@@ -61,7 +61,7 @@ p {
 .screen {
     position: relative;
     height: 100vh;
-    z-index: 10;
+    /* z-index: 10; */
     overflow: hidden;
 
     display: flex;
@@ -82,7 +82,7 @@ p {
 
 .background-img-container {
     position: absolute;
-    z-index: -10;
+    /* z-index: -10; */
 
     width: 100%;
 }
@@ -240,6 +240,9 @@ p {
     text-align: center;
     align-self: center;
     overflow: hidden;
+
+    transition-property: flex-grow;
+    transition-duration: .7s;
 }
 
 .flex-content {
@@ -501,6 +504,11 @@ p {
 
         color: var(--dark-color);
         background-color: var(--light-color);
+
+        transform: scaleX(0);
+
+        transition-property: all;
+        transition-duration: .1s;
     }
 
     .flex-item.active {
@@ -515,11 +523,9 @@ p {
         display: block;
     }
 
-    /* .flex-item.active .flex-content .flex-description-box .flex-link {
-        line-height: 4rem;
-        display: block;
-        margin: 1.2rem;
-    } */
+    .flex-link.active {
+        transform: scaleX(1);
+    }
 
     .icon-container {
         padding-top: 4rem;
@@ -607,6 +613,10 @@ p {
         line-height: 7rem;
     } 
     
+    .flex-item:hover .flex-content .flex-link {
+        color: var(--sub-color);
+    }
+
     .flex-item:hover .flex-content .flex-link:hover {
         color: var(--sub-color);
     }
