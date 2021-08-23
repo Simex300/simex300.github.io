@@ -1,5 +1,6 @@
-window.addEventListener('load', removeDOMClasses)
-window.addEventListener('resize', removeDOMClasses)
+window.addEventListener('load', removeDOMClasses);
+window.addEventListener('resize', removeDOMClasses);
+window.addEventListener('scroll', getTopButton);
 
 document.querySelectorAll(".grid-item").forEach(e => {
     if (!navigator.userAgentData.mobile) 
@@ -17,6 +18,8 @@ document.querySelectorAll(".flex-link").forEach(e => {
     if (navigator.userAgentData.mobile)
         e.onpointerdown = manageLink;
 });
+
+document.querySelector(".top-button").addEventListener("click", scrollTop)
 
 function openSkills() {
     const hadActive = this.children[1].classList.contains("active")
@@ -64,6 +67,19 @@ function removeDOMClasses() {
             }
         })
     }
+}
+
+function getTopButton(e) {
+    if ((document.body.scrollHeight - window.innerHeight) - window.pageYOffset <= 200) {
+        document.querySelector(".top-button").classList.remove("hidden")
+    }
+    else {
+        document.querySelector(".top-button").classList.add("hidden")
+    }
+}
+
+function scrollTop(e) {
+    window.scrollTo({top: 0, behavior: "smooth"});
 }
 
 function manageLink(e) {

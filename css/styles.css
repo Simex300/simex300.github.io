@@ -298,6 +298,29 @@ p {
     width: 100%;
 }
 
+.top-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: fixed;
+    top: 90%;
+    left: 90%;
+
+    width: 4rem;
+    height: 4rem;
+    font-size: 2.6rem;
+    color: var(--main-color);
+    background-color: var(--dark-color);
+
+    text-decoration: none;
+    box-shadow: 0px 0px 5px var(--light-color);
+}
+
+.top-button.hidden {
+    display: none;
+}
+
 /* ID */
 #intro {
     background: url("/img/background.png"), linear-gradient(180deg, rgba(208,232,242,1) 0%, rgba(208,232,242,1) 75%, rgba(208,232,242,0) 85%);
@@ -313,7 +336,6 @@ p {
 
 #portfolio {
     color: var(--dark-color);
-
     flex-direction: column;
 }
 
