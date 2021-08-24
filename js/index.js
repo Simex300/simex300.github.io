@@ -1,6 +1,17 @@
 window.addEventListener('load', removeDOMClasses);
+window.addEventListener('load', getNavActive);
 window.addEventListener('resize', removeDOMClasses);
 window.addEventListener('scroll', getTopButton);
+window.addEventListener('scroll', getNavActive);
+
+const home = document.querySelector("#home");
+const skills = document.querySelector("#skills");
+const portfolio = document.querySelector("#portfolio");
+const contact = document.querySelector("#contact");
+
+document.querySelectorAll(".nav-item").forEach(e => {
+    e.onpointerup = scrollToPage;
+})
 
 document.querySelectorAll(".grid-item").forEach(e => {
     if (!navigator.userAgentData.mobile) 
@@ -75,6 +86,47 @@ function getTopButton(e) {
     }
     else {
         document.querySelector(".top-button").classList.add("hidden")
+    }
+}
+
+function changeNavClass(element) {
+    console.log(element);
+    document.querySelectorAll(".nav-item").forEach(item => {
+        item.classList.remove("active")
+    });
+    element.classList.add("active");
+}
+
+function getNavActive() {
+    const posArray = [home, skills, portfolio, contact]
+    const needle = 0;
+    posArray.sort((prev, curr) => {
+        return Math.abs(needle - prev.getBoundingClientRect().top) - Math.abs(needle - curr.getBoundingClientRect().top);
+    });
+
+    document.querySelectorAll(".nav-item").forEach(item => {
+        console.log("item", item);
+        if (item.children[0].innerHTML.toLowerCase() == posArray[0].id) {
+            changeNavClass(item);
+        } 
+    })
+}
+
+function scrollToPage(e) {
+    // Move to the actual position
+    switch (this.children[0].innerHTML.toLowerCase()) {
+        case "home":
+            window.scrollTo({top: window.innerHeight * 0, behavior: "smooth"});
+            break;
+        case "skills":
+            window.scrollTo({top: window.innerHeight * 1, behavior: "smooth"});
+            break;
+        case "portfolio":
+            window.scrollTo({top: window.innerHeight * 2, behavior: "smooth"});
+            break;
+        case "contact":
+            window.scrollTo({top: window.innerHeight * 3, behavior: "smooth"});
+            break;
     }
 }
 
