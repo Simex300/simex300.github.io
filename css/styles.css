@@ -644,9 +644,10 @@ p {
         align-items: stretch;
         padding-top: 5%;
     }
-
+    
     #portfolio {
         align-items: stretch;
+        padding-top: 5%;
     }
 
     #contact .box {
@@ -714,5 +715,11 @@ p {
 
     .flex-item:hover .flex-content .flex-link:hover {
         color: var(--sub-color);
+    }
+
+    .nav-item:hover span { 
+        background-color: rgba(0,0,0,0.5);
+        opacity: 1;
+        transform: translateX(-3rem);
     }
 }

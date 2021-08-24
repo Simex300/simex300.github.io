@@ -90,7 +90,6 @@ function getTopButton(e) {
 }
 
 function changeNavClass(element) {
-    console.log(element);
     document.querySelectorAll(".nav-item").forEach(item => {
         item.classList.remove("active")
     });
@@ -105,7 +104,6 @@ function getNavActive() {
     });
 
     document.querySelectorAll(".nav-item").forEach(item => {
-        console.log("item", item);
         if (item.children[0].innerHTML.toLowerCase() == posArray[0].id) {
             changeNavClass(item);
         } 
