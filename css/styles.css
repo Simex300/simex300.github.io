@@ -355,7 +355,7 @@ p {
     justify-self: end;
     opacity: 0;
 
-    clip-path: polygon(10% 0%, 90% 0%, 100% 50%, 90% 100%, 10% 100%);
+    clip-path: polygon(5% 0%, 90% 0%, 100% 50%, 90% 100%, 5% 100%);
 
     color: var(--light-color);
 
